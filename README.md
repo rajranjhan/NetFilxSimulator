@@ -18,3 +18,5 @@ Calibrun.micro for MVVM framework
 QuickFixEngine for Fix Protocol
 Log4net for Logging
 RibbonControls
+
+## No longer maintained.  
