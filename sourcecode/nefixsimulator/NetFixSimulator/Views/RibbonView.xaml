@@ -1,0 +1,104 @@
+﻿<UserControl x:Class="AR.NETFixSimulator.Views.RibbonView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon"
+             xmlns:data="clr-namespace:AR.NETFixSimulator.Models" xmlns:cal="http://www.caliburnproject.org"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.Resources>
+            <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+            <!-- RibbonTab -->
+            <Style TargetType="{x:Type ribbon:RibbonTab}">
+                <Setter Property="ContextualTabGroupHeader" Value="{Binding ContextualTabGroupHeader}" />
+                <Setter Property="Header" Value="{Binding Header}" />
+                <Setter Property="ItemsSource" Value="{Binding GroupDataCollection}" />
+            </Style>
+            <!-- RibbonContextualTabGroup -->
+            <Style TargetType="{x:Type ribbon:RibbonContextualTabGroup}">
+                <Setter Property="Header" Value="{Binding Header}" />
+                <Setter Property="Visibility" Value="{Binding IsVisible,Converter={StaticResource BoolToVisibilityConverter}}" />
+            </Style>
+            <!-- RibbonControl -->
+            <Style x:Key="RibbonControlStyle">
+                <Setter Property="ribbon:RibbonControlService.Label" Value="{Binding Label}" />
+                <Setter Property="ribbon:RibbonControlService.LargeImageSource" Value="{Binding LargeImage}" />
+                <Setter Property="ribbon:RibbonControlService.SmallImageSource" Value="{Binding SmallImage}" />
+                <Setter Property="ribbon:RibbonControlService.ToolTipTitle" Value="{Binding ToolTipTitle}" />
+                <Setter Property="ribbon:RibbonControlService.ToolTipDescription" Value="{Binding ToolTipDescription}" />
+                <Setter Property="ribbon:RibbonControlService.ToolTipImageSource" Value="{Binding ToolTipImage}" />
+            </Style>
+            <!-- RibbonGroup -->
+            <Style TargetType="{x:Type ribbon:RibbonGroup}" BasedOn="{StaticResource RibbonControlStyle}">
+                <Setter Property="QuickAccessToolBarId" Value="{Binding Label}" />
+                <Setter Property="Header" Value="{Binding Label}" />
+                <Setter Property="ItemsSource" Value="{Binding ControlDataCollection}" />
+            </Style>
+            <!-- RibbonTextBox -->
+            <DataTemplate DataType="{x:Type data:TextBoxData}">
+                <ribbon:RibbonTextBox/>
+            </DataTemplate>
+            <Style TargetType="{x:Type ribbon:RibbonTextBox}" BasedOn="{StaticResource RibbonControlStyle}">
+                <Setter Property="Text" Value="{Binding Text}" />
+            </Style>
+            <!-- RibbonButton -->
+            <DataTemplate DataType="{x:Type data:ButtonData}">
+                <ribbon:RibbonButton />
+            </DataTemplate>
+            <Style TargetType="{x:Type ribbon:RibbonButton}" BasedOn="{StaticResource RibbonControlStyle}">                
+                <Setter Property="cal:Action.TargetWithoutContext" Value="{Binding Target}" />
+                <Setter Property="cal:Message.Attach" Value="{Binding Message}" />
+            </Style>
+            <!-- RibbonCheckBox -->
+            <DataTemplate DataType="{x:Type data:CheckBoxData}">
+                <ribbon:RibbonCheckBox />
+            </DataTemplate>
+            <Style TargetType="{x:Type ribbon:RibbonCheckBox}" BasedOn="{StaticResource RibbonControlStyle}">                
+                <Setter Property="IsChecked" Value="{Binding IsChecked}" />                
+            </Style>
+            <!-- RibbonToggleButton -->
+            <DataTemplate DataType="{x:Type data:ToggleButtonData}">
+                <ribbon:RibbonToggleButton />
+            </DataTemplate>
+            <Style TargetType="{x:Type ribbon:RibbonToggleButton}" BasedOn="{StaticResource RibbonControlStyle}">
+                <Setter Property="Command" Value="{Binding Command}" />
+                <Setter Property="IsChecked" Value="{Binding IsChecked}" />
+            </Style>            
+         </Grid.Resources>        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />            
+        </Grid.RowDefinitions>
+        <!--<ribbon:Ribbon x:Name="ribbon"
+            Grid.Row="0"
+            ItemsSource="{Binding Source={x:Static data:ViewModelData.RibbonData},Path=TabDataCollection}"
+            ContextualTabGroupsSource="{Binding Source={x:Static data:ViewModelData.RibbonData},Path=ContextualTabGroupDataCollection}">
+            <ribbon:Ribbon.ApplicationMenu>
+                <ribbon:RibbonApplicationMenu 
+                    DataContext="{Binding Source={x:Static data:ViewModelData.RibbonData},Path=ApplicationMenuData}" 
+                    SmallImageSource="{Binding SmallImage}"
+                    ToolTipTitle="{Binding ToolTipTitle}"
+                    ToolTipDescription="{Binding ToolTipDescription}"
+                    ToolTipImageSource="{Binding ToolTipImage}"
+                    UsesItemContainerTemplate="True"
+                    ItemsSource="{Binding ControlDataCollection}" />
+            </ribbon:Ribbon.ApplicationMenu>
+        </ribbon:Ribbon>-->        
+        <ribbon:Ribbon x:Name="ribbon"
+            Grid.Row="0"
+            ItemsSource="{Binding TabDataCollection}"
+            ContextualTabGroupsSource="{Binding ContextualTabGroupDataCollection}">
+            <!--<ribbon:Ribbon.ApplicationMenu>
+                <ribbon:RibbonApplicationMenu 
+                    DataContext="{Binding Source={x:Static data:ViewModelData.RibbonData},Path=ApplicationMenuData}" 
+                    SmallImageSource="{Binding SmallImage}"
+                    ToolTipTitle="{Binding ToolTipTitle}"
+                    ToolTipDescription="{Binding ToolTipDescription}"
+                    ToolTipImageSource="{Binding ToolTipImage}"
+                    UsesItemContainerTemplate="True"
+                    ItemsSource="{Binding ControlDataCollection}" />
+            </ribbon:Ribbon.ApplicationMenu>-->
+        </ribbon:Ribbon> 
+    </Grid>
+</UserControl>

@@ -1,0 +1,70 @@
+[
+  {
+    "Id": "0",
+    "Name": "Alpha 0.4",
+    "DevelopmentStatus": "Alpha",
+    "Description": "Added FIX Definition file to installation",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2012-05-15T17:12:50.407-07:00",
+    "Files": [
+      {
+        "Id": "56979b57-c024-4624-bb7a-17a69adf9410",
+        "FileName": "NetFixSimulator.application",
+        "Url": "./0/56979b57-c024-4624-bb7a-17a69adf9410",
+        "Type": "Application",
+        "UploadDate": "2012-05-15T17:12:51.343-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "1",
+    "Name": "Alpha",
+    "DevelopmentStatus": "Alpha",
+    "Description": "Alpha Release",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2012-04-23T22:57:17.727-07:00",
+    "Files": [
+      {
+        "Id": "5c62dc1f-9996-4687-bd0a-da703fb22f3a",
+        "FileName": "NetFixSimulator.application",
+        "Url": "./1/5c62dc1f-9996-4687-bd0a-da703fb22f3a",
+        "Type": "Application",
+        "UploadDate": "2012-04-23T22:57:18.29-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "2",
+    "Name": ".Net Fix Simulator",
+    "DevelopmentStatus": "Planning",
+    "Description": "This is the first release",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2012-04-18T08:42:01.377-07:00",
+    "Files": [
+      {
+        "Id": "7960689b-5209-478b-bbf0-10db5c1539aa",
+        "FileName": "NetFixSimulator.application",
+        "Url": "./2/7960689b-5209-478b-bbf0-10db5c1539aa",
+        "Type": "Application",
+        "UploadDate": "2012-04-18T08:42:01.893-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "3",
+    "Name": "Alpha  0.4.1",
+    "DevelopmentStatus": "Alpha",
+    "Description": "Added support for partial fills",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2012-05-21T17:13:07.497-07:00",
+    "Files": [
+      {
+        "Id": "ae9b0e8b-533a-4f50-a268-11620135c7c0",
+        "FileName": "NetFixSimulator.application",
+        "Url": "./3/ae9b0e8b-533a-4f50-a268-11620135c7c0",
+        "Type": "Application",
+        "UploadDate": "2012-05-21T17:13:08.213-07:00"
+      }
+    ]
+  }
+]
